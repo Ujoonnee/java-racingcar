@@ -33,4 +33,28 @@ class RaceTest {
                 .isInstanceOf(InputViewException.class)
                 .hasMessage("1 ~ 10 사이의 정수만 사용할 수 있습니다.");
     }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"1", "2", "4", "7", "11", "16", "22", "29", "30"})
+    void 이동_횟수는_1회_이상_30회_이하로_제한한다(String input) {
+        assertThatCode(() -> InputView.askRoundCount(new Scanner(input))).doesNotThrowAnyException();
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"-100", "-1", "0", "31", "100"})
+    void 이동_횟수는__1회_미만_30회_초과로_설정할_수_없다(String input) {
+        assertThatThrownBy(() -> InputView.askRoundCount(new Scanner(input)))
+                .isInstanceOf(InputViewException.class)
+                .hasMessage("이동 횟수는 1회 이상 30회 이하로 설정해야 합니다.");
+
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"한글", "english", "1.1"})
+    @DisplayName("이동 횟수는 정수 이외의 값은 사용할 수 없다.")
+    void 이동_횟수_입력_시_숫자만_사용가능(String input) {
+        assertThatThrownBy(() -> InputView.askRoundCount(new Scanner(input)))
+                .isInstanceOf(InputViewException.class)
+                .hasMessage("1 ~ 30 사이의 정수만 사용할 수 있습니다.");
+    }
 }
