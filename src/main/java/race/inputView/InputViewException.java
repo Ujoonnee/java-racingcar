@@ -1,4 +1,4 @@
-package race;
+package race.inputView;
 
 public class InputViewException extends RuntimeException {
 

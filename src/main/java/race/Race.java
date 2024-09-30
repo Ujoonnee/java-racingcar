@@ -1,5 +1,7 @@
 package race;
 
+import race.inputView.InputView;
+
 import java.util.Scanner;
 
 public final class Race {

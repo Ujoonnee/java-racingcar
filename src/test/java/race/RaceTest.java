@@ -3,6 +3,8 @@ package race;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
+import race.inputView.InputView;
+import race.inputView.InputViewException;
 
 import java.util.Scanner;
 

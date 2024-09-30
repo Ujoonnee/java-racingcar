@@ -1,16 +1,16 @@
-package race;
+package race.inputView;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-final class InputView {
+public final class InputView {
 
     private static final int CAR_COUNT_LOWER_LIMIT = 1;
     private static final int CAR_COUNT_UPPER_LIMIT = 10;
     private static final int ROUND_COUNT_LOWER_LIMIT = 1;
     private static final int ROUND_COUNT_UPPER_LIMIT = 30;
 
-    static int askCarCount(final Scanner scanner) {
+    public static int askCarCount(final Scanner scanner) {
         System.out.println("자동차는 몇 대 인가요?");
 
         int carCount = 0;
@@ -32,7 +32,7 @@ final class InputView {
         }
     }
 
-    static int askRoundCount(final Scanner scanner) {
+    public static int askRoundCount(final Scanner scanner) {
         System.out.println("이동 횟수는 몇 번 인가요?");
 
         int roundCount = 0;
