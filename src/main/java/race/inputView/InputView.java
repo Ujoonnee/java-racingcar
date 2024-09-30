@@ -18,7 +18,7 @@ public final class InputView {
     public static int askCarCount(final Scanner scanner) {
         System.out.println("자동차는 몇 대 인가요?");
 
-        int carCount = 0;
+        int carCount;
         try {
             carCount = scanner.nextInt();
             validateRange(carCount, CAR_COUNT_LOWER_LIMIT, CAR_COUNT_UPPER_LIMIT, CAR_OUT_OF_RANGE_ERROR_MESSAGE);
@@ -33,7 +33,7 @@ public final class InputView {
     public static int askRoundCount(final Scanner scanner) {
         System.out.println("이동 횟수는 몇 번 인가요?");
 
-        int roundCount = 0;
+        int roundCount;
         try {
             roundCount = scanner.nextInt();
             validateRange(roundCount, ROUND_COUNT_LOWER_LIMIT, ROUND_COUNT_UPPER_LIMIT, ROUND_OUT_OF_RANGE_ERROR_MESSAGE);
